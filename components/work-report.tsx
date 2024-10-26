@@ -4,14 +4,11 @@ import { Mic, X } from "lucide-react";
 
 export function WorkReport({ onClose }: { onClose: () => void }) {
   return (
-    <div className="p-4 space-y-4">
+    <div className="p-4 space-y-4 flex flex-col h-full">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold">作業報告</h2>
-        <Button onClick={onClose} variant="outline" size="lg" className="px-6">
-          <X className="mr-2 h-4 w-4" /> 閉じる
-        </Button>
       </div>
-      <div className="space-y-4">
+      <div className="space-y-4 flex-1">
         <div className="grid grid-cols-2 gap-4">
           <label className="block">
             担当者
@@ -40,8 +37,15 @@ export function WorkReport({ onClose }: { onClose: () => void }) {
             <Button size="icon" className="w-12 h-12"><Mic className="w-6 h-6" /></Button>
           </div>
         </label>
+        <Button variant="outline" size="lg" className="w-full">
+          報告を送信
+        </Button>
       </div>
-      <Button className="w-full">報告を送信</Button>
+      <div className="mt-auto">
+        <Button onClick={onClose} variant="outline" size="lg" className="w-full">
+          <X className="mr-2 h-4 w-4" /> 閉じる
+        </Button>
+      </div>
     </div>
   );
 }
