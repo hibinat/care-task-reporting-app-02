@@ -7,9 +7,6 @@ export function WorkReport({ onClose }: { onClose: () => void }) {
     <div className="p-4 space-y-4">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold">作業報告</h2>
-        <Button onClick={onClose} variant="outline" size="lg" className="px-6">
-          <X className="mr-2 h-4 w-4" /> 閉じる
-        </Button>
       </div>
       <div className="space-y-4">
         <div className="grid grid-cols-2 gap-4">
@@ -41,7 +38,9 @@ export function WorkReport({ onClose }: { onClose: () => void }) {
           </div>
         </label>
       </div>
-      <Button className="w-full">報告を送信</Button>
+      <Button onClick={onClose} variant="outline" size="lg" className="w-full">
+        <X className="mr-2 h-4 w-4" /> 閉じる
+      </Button>
     </div>
   );
 }

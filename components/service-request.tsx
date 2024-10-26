@@ -7,9 +7,6 @@ export function ServiceRequest({ onClose }: { onClose: () => void }) {
     <div className="p-4 space-y-4">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold">サービス依頼書</h2>
-        <Button onClick={onClose} variant="outline" size="lg" className="px-6">
-          <X className="mr-2 h-4 w-4" /> 閉じる
-        </Button>
       </div>
       <div className="space-y-4">
         <label className="block">
@@ -26,7 +23,9 @@ export function ServiceRequest({ onClose }: { onClose: () => void }) {
           <Input type="datetime-local" />
         </label>
       </div>
-      <Button className="w-full">依頼書を送信</Button>
+      <Button onClick={onClose} variant="outline" size="lg" className="w-full">
+        <X className="mr-2 h-4 w-4" /> 閉じる
+      </Button>
     </div>
   );
 }
