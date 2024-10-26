@@ -3,6 +3,14 @@ import { Input } from "@/components/ui/input";
 import { Mic, X } from "lucide-react";
 
 export function ServiceRequest({ onClose }: { onClose: () => void }) {
+  const setTodayDate = () => {
+    const today = new Date().toISOString().slice(0, 16);
+    const dateInput = document.getElementById("request-date-input") as HTMLInputElement;
+    if (dateInput) {
+      dateInput.value = today;
+    }
+  };
+
   return (
     <div className="p-4 space-y-4 flex flex-col h-full">
       <div className="flex justify-between items-center mb-4">
@@ -20,7 +28,10 @@ export function ServiceRequest({ onClose }: { onClose: () => void }) {
         </label>
         <label className="block">
           依頼日時
-          <Input type="datetime-local" />
+          <div className="flex items-center space-x-2">
+            <Input id="request-date-input" type="datetime-local" />
+            <Button onClick={setTodayDate}>今日の日付を入力</Button>
+          </div>
         </label>
         <Button variant="outline" size="lg" className="w-full">
           依頼書を送信
