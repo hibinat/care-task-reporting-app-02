@@ -1,12 +1,11 @@
 'use client'
 
 import { useState } from 'react'
-import { Menu, MessageSquare, Mic, Send, FileText, UserPlus, X } from 'lucide-react'
+import { Menu, Mic, Send, UserPlus } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { WorkReport } from "@/components/work-report"
 import { ServiceRequest } from "@/components/service-request"
 
