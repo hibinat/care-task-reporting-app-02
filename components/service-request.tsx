@@ -4,11 +4,11 @@ import { Mic, X } from "lucide-react";
 
 export function ServiceRequest({ onClose }: { onClose: () => void }) {
   return (
-    <div className="p-4 space-y-4">
+    <div className="p-4 space-y-4 flex flex-col h-full">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold">サービス依頼書</h2>
       </div>
-      <div className="space-y-4">
+      <div className="space-y-4 flex-1">
         <label className="block">
           サービス内容
           <Input type="text" />
@@ -22,10 +22,15 @@ export function ServiceRequest({ onClose }: { onClose: () => void }) {
           依頼日時
           <Input type="datetime-local" />
         </label>
+        <Button variant="outline" size="lg" className="w-full">
+          依頼書を送信
+        </Button>
       </div>
-      <Button onClick={onClose} variant="outline" size="lg" className="w-full">
-        <X className="mr-2 h-4 w-4" /> 閉じる
-      </Button>
+      <div className="mt-auto">
+        <Button onClick={onClose} variant="outline" size="lg" className="w-full">
+          <X className="mr-2 h-4 w-4" /> 閉じる
+        </Button>
+      </div>
     </div>
   );
 }
